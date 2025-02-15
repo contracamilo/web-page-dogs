@@ -1,0 +1,413 @@
+/* =========================
+   Reset básico y configuración global
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+  
+  /* =========================
+     Estilos para el Encabezado y Navegación
+  ========================= */
+  .header {
+    background-color: #ff9800;
+    padding: 2rem;
+    position: relative;
+  }
+  
+  /* Estilos para el menú hamburguesa */
+  .header__toggle-checkbox {
+    display: none;
+  }
+  
+  .header__toggle-label {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 30px;
+    height: 30px;
+    z-index: 1100;
+  }
+  
+  .header__toggle-icon,
+  .header__toggle-icon::before,
+  .header__toggle-icon::after {
+    content: "";
+    display: block;
+    background: #fff;
+    height: 3px;
+    width: 100%;
+    border-radius: 3px;
+    position: absolute;
+  }
+  
+  .header__toggle-icon {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .header__toggle-icon::before {
+    top: -8px;
+  }
+  
+  .header__toggle-icon::after {
+    top: 8px;
+  }
+  
+  /* Estilos de la navegación */
+  .header__nav {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .header__nav-list {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .header__nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .header__nav-link:hover,
+  .header__nav-link:focus {
+    color: #333;
+  }
+  
+/* =========================
+   Sección Hero (Bienvenida) con imagen de fondo
+========================= */
+.hero {
+    position: relative;
+    text-align: center;
+    padding: 8rem;
+    background: url('assets/pet-7106365_1920.jpg') no-repeat center center/cover;
+    color: #fff;
+  }
+  
+  /* Clase para ocultar elementos visualmente pero accesibles para lectores de pantalla */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  
+  
+  /* Animación con keyframes para la imagen del Hero */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .hero__img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin-top: 1rem;
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  .intro {
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem auto;
+    text-align: center;
+  }
+  
+  /* =========================
+     Sección de Adopción
+  ========================= */
+  .adopcion {
+    padding: 2rem;
+    background-color: #fff;
+  }
+  
+  .adopcion__title {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+  
+  .adopcion__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+  }
+  
+  /* Tarjetas de perros usando BEM */
+  .tarjeta {
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+  }
+  
+  .tarjeta:hover {
+    transform: scale(1.02);
+  }
+  
+  .tarjeta__img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .tarjeta__body {
+    padding: 1rem;
+  }
+  
+  .tarjeta__title {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+  }
+  
+  .tarjeta__description {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  /* =========================
+     Sección de Noticias
+  ========================= */
+  .noticias {
+    padding: 3rem;
+  }
+  
+  .noticias__title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .noticias__articulo {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .noticias__articulo-title {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .noticias__articulo-text {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    color: #555;
+  }
+  
+  .noticias__articulo-link {
+    color: #ff9800;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .noticias__articulo-link:hover,
+  .noticias__articulo-link:focus {
+    color: #e68900;
+  }
+
+  /* Ocultar los inputs radio */
+.noticias__carousel input[type="radio"] {
+    display: none;
+  }
+  
+  /* Contenedor principal del carrusel */
+  .noticias__carousel {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    margin: auto;
+  }
+  
+  /* Contenedor de los artículos, en fila */
+  .noticias__carousel-items {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    /* Cada artículo ocupará el 100% del ancho del contenedor */
+  }
+  
+  /* Cada artículo ocupa el 100% del ancho del carrusel */
+  .noticias__carousel-items .noticias__articulo {
+    flex: 0 0 100%;
+    padding: 2rem;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  /* Posicionamiento de la navegación de puntos */
+  .noticias__carousel-nav {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Estilos para los puntos de navegación */
+  .noticias__carousel-dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  /* Cambiar el color del punto activo */
+  #noticia-1:checked ~ .noticias__carousel-items {
+    transform: translateX(0%);
+  }
+  #noticia-2:checked ~ .noticias__carousel-items {
+    transform: translateX(-100%);
+  }
+  #noticia-3:checked ~ .noticias__carousel-items {
+    transform: translateX(-200%);
+  }
+  
+  /* Destacar el punto activo */
+  #noticia-1:checked ~ .noticias__carousel-nav label[for="noticia-1"],
+  #noticia-2:checked ~ .noticias__carousel-nav label[for="noticia-2"],
+  #noticia-3:checked ~ .noticias__carousel-nav label[for="noticia-3"] {
+    background: #ff9800;
+  }
+  
+  
+  /* =========================
+     Sección de Contacto
+  ========================= */
+  .contacto {
+    padding: 2rem;
+    background-color: #e0e0e0;
+  }
+  
+  .contacto__title {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+  
+  .contacto__form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .contacto__label {
+    font-weight: bold;
+  }
+  
+  .contacto__input,
+  .contacto__textarea {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  .contacto__btn {
+    background-color: #ff9800;
+    color: #fff;
+    border: none;
+    padding: 0.75rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  .contacto__btn:hover,
+  .contacto__btn:focus {
+    background-color: #e68900;
+  }
+  
+  /* =========================
+     Pie de Página
+  ========================= */
+  .footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  /* =========================
+     Responsive Design y Menú Hamburguesa
+  ========================= */
+  @media (max-width: 768px) {
+    /* Mostrar el botón de menú */
+    .header__toggle-label {
+      display: block;
+    }
+    
+    /* Ocultar el menú de navegación por defecto */
+    .header__nav {
+      display: none;
+      background-color: #ff9800;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      left: 0;
+      text-align: center;
+      z-index: 1000;
+    }
+    
+    .header__nav-list {
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+    
+    /* Mostrar el menú cuando el checkbox esté marcado */
+    .header__toggle-checkbox:checked ~ .header__nav {
+      display: block;
+    }
+    
+    /* Ajustes en el menú de navegación */
+    .header__nav-link {
+      font-size: 1.2rem;
+    }
+    
+    /* Ajuste en el tamaño del título Hero */
+    .hero__title {
+      font-size: 1.75rem;
+    }
+    
+    /* Alineación en la sección de adopción */
+    .adopcion__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Metaetiquetas esenciales para SEO y responsive design -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sitio web de adopción de perros. Encuentra a tu nuevo mejor amigo.">
+  <title>Adopta un Perro - Centro de Adopción</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Hoja de estilos -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Encabezado con navegación principal y menú hamburguesa para dispositivos móviles -->
+  <header class="header">
+    <!-- Checkbox oculto para activar el menú -->
+    <input type="checkbox" id="menu-toggle" class="header__toggle-checkbox">
+    <!-- Icono de menú hamburguesa -->
+    <label for="menu-toggle" class="header__toggle-label">
+      <span class="header__toggle-icon"></span>
+    </label>
+    <nav class="header__nav" role="navigation">
+      <ul class="header__nav-list">
+        <li class="header__nav-item"><a href="#inicio" class="header__nav-link">Inicio</a></li>
+        <li class="header__nav-item"><a href="#adopcion" class="header__nav-link">Adopción</a></li>
+        <li class="header__nav-item"><a href="#noticias" class="header__nav-link">Noticias</a></li>
+        <li class="header__nav-item"><a href="#contacto" class="header__nav-link">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contenido principal del sitio -->
+  <main class="main">
+    <!-- Sección de bienvenida (Hero) -->
+    <section id="inicio" class="hero" aria-label="Perro feliz en adopción">
+      <div class="hero__content">
+        <h1 class="hero__title">¡Encuentra a tu nuevo amigo!</h1>
+        <p class="hero__subtitle">Adopta un perro y cambia una vida.</p>
+      </div>
+      <!-- Texto oculto para accesibilidad (screen readers) -->
+      <span class="sr-only">Imagen de fondo: Perro feliz en adopción</span>
+    </section>
+
+    <section id="intro" class="intro" >
+      <h2 class="adopcion__title">Dale la bienvenida a un amigo en tu vida </h2>
+      <p>En nuestro centro de adopción encontrarás perros de todas las edades, tamaños y razas. 
+        Cada uno de ellos está listo para encontrar un hogar amoroso y responsable. 
+        Si estás pensando en adoptar, ¡no lo dudes más! Ven a conocernos y descubre a tu nuevo mejor amigo.</p>
+     </section>
+
+    <!-- Sección de perros disponibles para adopción -->
+    <section id="adopcion" class="adopcion">
+      <h2 class="adopcion__title">Perros en Adopción</h2>
+      <div class="adopcion__grid">
+        <!-- Tarjeta de un perro -->
+        <article class="tarjeta">
+          <img src="assets/dog-1854119_640.jpg" alt="Perro de raza mestiza, color marrón" class="tarjeta__img" width="700" height="500">
+          <div class="tarjeta__body">
+            <h3 class="tarjeta__title">Firulais</h3>
+            <p class="tarjeta__description">Un perro cariñoso y juguetón, listo para encontrar un hogar.</p>
+          </div>
+        </article>
+        <!-- Tarjeta de otro perro -->
+        <article class="tarjeta">
+          <img src="assets/dachshund-1519374_640.jpg" alt="Perro con orejas caídas y mirada tierna" class="tarjeta__img" width="300" height="200">
+          <div class="tarjeta__body">
+            <h3 class="tarjeta__title">Luna</h3>
+            <p class="tarjeta__description">Dulce y leal, esperando a su familia ideal.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+<!-- Sección de Noticias Recientes con Carrusel -->
+<section id="noticias" class="noticias">
+  <h2 class="noticias__title">Noticias Recientes</h2>
+  
+  <div class="noticias__carousel">
+    <!-- Inputs tipo radio para controlar el carrusel -->
+    <input type="radio" name="carousel" id="noticia-1" checked>
+    <input type="radio" name="carousel" id="noticia-2">
+    <input type="radio" name="carousel" id="noticia-3">
+
+    <!-- Contenedor de artículos del carrusel -->
+    <div class="noticias__carousel-items">
+      <!-- Noticia 1 -->
+      <article class="noticias__articulo">
+        <h3 class="noticias__articulo-title">Evento de Adopción Masiva</h3>
+        <p class="noticias__articulo-text">
+          El próximo mes se llevará a cabo un evento especial de adopción masiva en nuestro centro. 
+          Contaremos con la participación de voluntarios y especialistas en comportamiento animal para ayudar a las mascotas.
+        </p>
+        <a href="evento-adopcion.html" class="noticias__articulo-link">Leer más</a>
+      </article>
+      <!-- Noticia 2 -->
+      <article class="noticias__articulo">
+        <h3 class="noticias__articulo-title">Nueva Campaña de Vacunación</h3>
+        <p class="noticias__articulo-text">
+          Lanzamos una nueva campaña de vacunación para nuestros amigos caninos. ¡Infórmate y participa!
+        </p>
+        <a href="campana-vacunacion.html" class="noticias__articulo-link">Leer más</a>
+      </article>
+      <!-- Noticia 3 -->
+      <article class="noticias__articulo">
+        <h3 class="noticias__articulo-title">Testimonios de Adoptantes</h3>
+        <p class="noticias__articulo-text">
+          Conoce las experiencias de quienes han encontrado en nuestros perros a su mejor amigo.
+        </p>
+        <a href="testimonios.html" class="noticias__articulo-link">Leer más</a>
+      </article>
+    </div>
+
+    <!-- Navegación con puntos -->
+    <div class="noticias__carousel-nav">
+      <label for="noticia-1" class="noticias__carousel-dot"></label>
+      <label for="noticia-2" class="noticias__carousel-dot"></label>
+      <label for="noticia-3" class="noticias__carousel-dot"></label>
+    </div>
+  </div>
+</section>
+
+
+  </main>
+
+  <!-- Sección de Contacto -->
+  <section id="contacto" class="contacto">
+    <h2 class="contacto__title">Contáctanos</h2>
+    <form class="contacto__form" action="#" method="post">
+      <label for="nombre" class="contacto__label">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" class="contacto__input" required>
+
+      <label for="email" class="contacto__label">Correo Electrónico:</label>
+      <input type="email" id="email" name="email" class="contacto__input" required>
+
+      <label for="mensaje" class="contacto__label">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" class="contacto__textarea" required></textarea>
+
+      <button type="submit" class="contacto__btn">Enviar Mensaje</button>
+    </form>
+  </section>
+
+  <!-- Pie de página -->
+  <footer class="footer">
+    <p class="footer__text">© 2025 Adopta un Perro. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
