@@ -102,6 +102,14 @@
     background: url('assets/pet-7106365_1920.jpg') no-repeat center center/cover;
     color: #fff;
   }
+
+  .hero-2 {
+    position: relative;
+    text-align: center;
+    padding: 8rem;
+    background: url('assets/pexels-ifaw-5486956.jpg') no-repeat center center/cover;
+    color: #fff;
+  }
   
   /* Clase para ocultar elementos visualmente pero accesibles para lectores de pantalla */
   .sr-only {
@@ -133,7 +141,7 @@
 
   .intro {
     width: 100%;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 2rem auto;
     text-align: center;
   }
